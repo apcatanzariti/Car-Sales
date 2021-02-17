@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 
 const AdditionalFeatures = props => {
-  console.log('additionalFeatures:', props);
+  // console.log('additionalFeatures:', props);
   return (
     <div className="content">
       <h4>Additional Features</h4>
