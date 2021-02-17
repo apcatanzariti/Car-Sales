@@ -27,11 +27,19 @@ const reducer = (state = initialState, action) => {
                     name: state.car.name,
                     image: state.car.image,
                     features: [...state.car.features, action.payload]
-                }
+                },
+                additionalFeatures: state.additionalFeatures.filter(el => el.name !== action.payload.name)
             });
         case REMOVE_FEATURE:
             return({
-
+                ...state,
+                additionalFeatures: [...state.additionalFeatures, action.payload],
+                car: {
+                    price: state.car.price,
+                    name: state.car.name,
+                    image: state.car.image,
+                    features: state.car.features.filter(el => el.name !== action.payload.name)
+                }
             });
         case UPDATE_TOTAL:
             return({

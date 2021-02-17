@@ -8,3 +8,10 @@ export const addFeature = (item) => {
         payload: item
     });
 };
+
+export const removeFeature = (item) => {
+    return ({
+        type: REMOVE_FEATURE,
+        payload: item
+    });
+};
